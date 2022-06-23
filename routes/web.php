@@ -13,8 +13,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/home', function () {
+    $data = [
+        'name' => 'Stefano',
+        'lastname' => 'Mastrantonio',
+        'isLoggedIn' => true,
+        // 'students' => [
+        //     [
+        //         'name' => 'Karolina',
+        //         'lastname' => 'Tymozsuck'
+        //     ],
+        //     [
+        //         'name' => 'Sara',
+        //         'lastname' => 'Genuardi'
+        //     ]
+        // ]
+    ];
+    return view('home', $data);
 });
 
 Route::get('/hello-world', function() {
